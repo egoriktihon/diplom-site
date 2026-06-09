@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ-панель — Клиника Доктор</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="account-ui.css?v=5">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Клиника Доктор</a>
+        <nav class="menu">
+            <a href="index.html">Главная</a>
+            <a href="services.html">Услуги</a>
+            <a href="doctors.html">Врачи</a>
+            <a href="prices.html">Цены</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+        <a href="auth.html#register" class="btn primary">Записаться</a>
+    </div>
+</header>
+
+<main class="profile-page">
+    <section class="container admin-layout" data-admin-page>
+        <aside class="admin-sidebar">
+            <a href="#admin-summary">Обзор</a>
+            <a href="#admin-specialty-form">Добавить специальность</a>
+            <a href="#admin-specialties">Специальности</a>
+            <a href="#admin-doctor-form">Добавить врача</a>
+            <a href="#admin-service-form">Добавить услугу</a>
+            <a href="#admin-doctors">Врачи</a>
+            <a href="#admin-services">Услуги</a>
+            <a href="#admin-appointments">Записи</a>
+        </aside>
+
+        <div class="admin-content">
+            <section class="profile-section" id="admin-summary">
+                <div class="admin-summary" data-admin-summary></div>
+            </section>
+
+            <section class="profile-section" id="admin-specialty-form">
+                <h2>Добавить специальность</h2>
+                <form class="admin-form" data-admin-specialty-form>
+                    <input type="text" name="name" placeholder="Название специальности" required>
+                    <input type="text" name="specialty_key" placeholder="Ключ: endocrinologist" required>
+                    <button type="submit" class="btn primary">Добавить специальность</button>
+                    <p class="auth-message"></p>
+                </form>
+            </section>
+
+            <section class="profile-section" id="admin-specialties">
+                <div class="section-header">
+                    <h2>Специальности</h2>
+                    <button class="btn secondary admin-toggle-btn" type="button" data-toggle-list="specialties">Свернуть</button>
+                </div>
+                <div class="admin-list" data-admin-specialties></div>
+            </section>
+
+            <section class="profile-section" id="admin-doctor-form">
+                <h2>Добавить врача</h2>
+                <form class="admin-form" data-admin-doctor-form>
+                    <input type="text" name="full_name" placeholder="ФИО врача" required>
+                    <select name="specialty_id" required></select>
+                    <div class="admin-form-group">
+                        <h3>Аккаунт врача</h3>
+                        <input type="email" name="account_login" placeholder="Логин врача (email)" required>
+                        <input type="tel" name="account_phone" placeholder="Телефон врача" required>
+                        <input type="text" name="account_password" placeholder="Пароль врача" required>
+                    </div>
+                    <input type="text" name="experience_text" placeholder="Стаж: 10 лет" required>
+                    <input type="file" name="image_file" accept="image/png,image/jpeg,image/webp" required>
+                    <div class="admin-picker">
+                        <label class="admin-picker-label" for="doctor-service-select">Услуги врача</label>
+                        <select id="doctor-service-select" data-admin-service-select>
+                            <option value="">Выберите услугу</option>
+                        </select>
+                        <button type="button" class="btn primary admin-picker-btn" data-admin-add-service>Добавить</button>
+                    </div>
+                    <div class="admin-selected-list" data-admin-selected-services></div>
+                    <textarea name="description" rows="4" placeholder="Описание врача" required></textarea>
+                    <button type="submit" class="btn primary">Добавить врача</button>
+                    <p class="auth-message"></p>
+                </form>
+            </section>
+
+            <section class="profile-section" id="admin-service-form">
+                <h2>Добавить услугу</h2>
+                <form class="admin-form" data-admin-service-form>
+                    <input type="text" name="name" placeholder="Название услуги" required>
+                    <input type="number" name="price" placeholder="Цена" required>
+                    <select name="category_key" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="consultation">Консультации</option>
+                        <option value="diagnostics">Диагностика</option>
+                        <option value="analysis">Анализы</option>
+                        <option value="cardio">Кардиология</option>
+                        <option value="checkup">Check-up</option>
+                        <option value="treatment">Лечение</option>
+                        <option value="general">Общее</option>
+                    </select>
+                    <select name="specialty_id">
+                        <option value="">Без специальности</option>
+                    </select>
+                    <p class="admin-hint">Услугу можно оставить общей или привязать к определенной специальности.</p>
+                    <input type="file" name="image_file" accept="image/png,image/jpeg,image/webp" required>
+                    <button type="submit" class="btn primary">Добавить услугу</button>
+                    <p class="auth-message"></p>
+                </form>
+            </section>
+
+            <section class="profile-section" id="admin-doctors">
+                <div class="section-header">
+                    <h2>Врачи</h2>
+                    <button class="btn secondary admin-toggle-btn" type="button" data-toggle-list="doctors">Свернуть</button>
+                </div>
+                <div class="admin-list" data-admin-doctors></div>
+            </section>
+
+            <section class="profile-section" id="admin-services">
+                <div class="section-header">
+                    <h2>Услуги</h2>
+                    <button class="btn secondary admin-toggle-btn" type="button" data-toggle-list="services">Свернуть</button>
+                </div>
+                <div class="admin-list" data-admin-services></div>
+            </section>
+
+            <section class="profile-section" id="admin-appointments">
+                <h2>Все записи</h2>
+                <div class="admin-appointments" data-admin-appointments></div>
+            </section>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Клиника Доктор</p>
+    </div>
+</footer>
+
+<script>
+const links = document.querySelectorAll('.menu a');
+links.forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+});
+</script>
+<script src="account-ui.js?v=5"></script>
+</body>
+</html>
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги — Клиника Доктор</title>
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="account-ui.css?v=5">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Клиника Доктор</a>
+        <nav class="menu">
+            <a href="index.html">Главная</a>
+            <a href="services.html" class="active">Услуги</a>
+            <a href="doctors.html">Врачи</a>
+            <a href="prices.html">Цены</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+        <a href="auth.html#register" class="btn primary">Записаться</a>
+    </div>
+</header>
+
+<section class="hero services-hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <span class="hero-badge">Современная помощь каждый день</span>
+            <h1>Услуги клиники для заботы о здоровье всей семьи</h1>
+            <p>Точная диагностика, консультации специалистов и лечебные программы в комфортной атмосфере.</p>
+            <a href="#services-list" class="btn glass">Посмотреть услуги</a>
+        </div>
+    </div>
+</section>
+
+<section class="container slogan-section">
+    <div class="slogan-card">
+        <div class="slogan-text">
+            <h2 class="section-title">Ваше здоровье в надежных руках</h2>
+            <p>Мы объединили опыт врачей, современное оборудование и внимательный подход, чтобы каждая услуга была понятной, доступной и эффективной.</p>
+            <ul class="slogan-points">
+                <li>Прием без лишнего ожидания</li>
+                <li>Индивидуальные рекомендации после обследования</li>
+                <li>Поддержка пациентов на каждом этапе лечения</li>
+            </ul>
+        </div>
+        <div class="slogan-image">
+            <img src="foto/bolnica.jpg" alt="Современная клиника">
+        </div>
+    </div>
+</section>
+
+<section class="container services-section" id="services-list">
+    <h2 class="section-title">Основные услуги</h2>
+        <div class="service-tabs">
+            <button class="btn primary active" type="button" data-service-filter="all">Все услуги</button>
+            <button class="btn primary" type="button" data-service-filter="consultation">Консультации</button>
+        </div>
+        <div class="services-grid">
+            <article class="service-card" data-category="consultation">
+            <p>Первичный и повторный прием терапевта, кардиолога, невролога и других врачей.</p>
+            <div class="service-price">от 1500 ₽</div>
+        </article>
+
+        <article class="service-card" data-category="diagnostics">
+            <img src="foto/prices/pri2.png" alt="Диагностика">
+            <h3>УЗИ и диагностика</h3>
+            <p>Современные методы обследования для точной и быстрой постановки диагноза.</p>
+            <div class="service-price">от 2000 ₽</div>
+        </article>
+
+        <article class="service-card" data-category="analysis">
+            <img src="foto/prices/pri3.png" alt="Анализы">
+            <h3>Лабораторные анализы</h3>
+            <p>Широкий спектр исследований с понятной выдачей результатов и рекомендаций.</p>
+            <div class="service-price">от 500 ₽</div>
+        </article>
+
+        <article class="service-card" data-category="cardio">
+            <img src="foto/prices/pri4.png" alt="Кардиология">
+            <h3>Кардиологические обследования</h3>
+            <p>ЭКГ, наблюдение и профилактика сердечно-сосудистых заболеваний.</p>
+            <div class="service-price">от 1200 ₽</div>
+        </article>
+
+        <article class="service-card" data-category="checkup">
+            <img src="foto/advantages/adv1.png" alt="Профилактика">
+            <h3>Профилактические программы</h3>
+            <p>Комплексные check-up программы для взрослых и детей с удобным графиком.</p>
+            <div class="service-price">от 3500 ₽</div>
+        </article>
+
+        <article class="service-card" data-category="treatment">
+            <img src="foto/advantages/adv4.png" alt="Индивидуальный подход">
+            <h3>Индивидуальные планы лечения</h3>
+            <p>Подбор терапии с учетом состояния пациента, образа жизни и истории болезни.</p>
+            <div class="service-price">от 2500 ₽</div>
+        </article>
+    </div>
+</section>
+
+<section class="container services-info">
+    <div class="info-card">
+        <div class="info-image">
+            <img src="foto/komand.jpg" alt="Команда клиники">
+        </div>
+        <div class="info-text">
+            <h2 class="section-title">Почему пациенты выбирают нас</h2>
+            <div class="info-list">
+                <div class="info-item">
+                    <h3>Комплексный подход</h3>
+                    <p>От первой консультации до рекомендаций по восстановлению вы получаете понятный маршрут лечения.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Опытная команда</h3>
+                    <p>Специалисты разных направлений работают вместе, чтобы быстрее находить лучшие решения.</p>
+                </div>
+                <div class="info-item">
+                    <h3>Комфорт для пациента</h3>
+                    <p>Уютная атмосфера, удобная запись и внимательное сопровождение на каждом визите.</p>
+                </div>
+            </div>
+            <a href="doctors.html" class="btn primary">Наши врачи</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Клиника Доктор</p>
+    </div>
+</footer>
+
+<script>
+const links = document.querySelectorAll('.menu a');
+links.forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+});
+</script>
+<script src="account-ui.js?v=5"></script>
+
+</body>
+</html>
+

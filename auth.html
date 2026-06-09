@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и авторизация — Клиника Доктор</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="account-ui.css?v=5">
+</head>
+<body>
+<header class="header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Клиника Доктор</a>
+        <nav class="menu">
+            <a href="index.html">Главная</a>
+            <a href="services.html">Услуги</a>
+            <a href="doctors.html">Врачи</a>
+            <a href="prices.html">Цены</a>
+            <a href="auth.html" class="active">Вход</a>
+        </nav>
+        <a href="auth.html#register" class="btn primary">Записаться</a>
+    </div>
+</header>
+
+<main class="auth-page">
+    <div class="auth-backdrop"></div>
+    <section class="auth-shell container">
+        <div class="auth-aside">
+            <span class="hero-badge">Личный кабинет пациента</span>
+            <h1>Регистрация и авторизация для онлайн-записи</h1>
+            <p>Создайте аккаунт, чтобы записываться к врачу, отслеживать визиты и быстрее оформлять прием в клинике.</p>
+            <ul class="auth-benefits">
+                <li>Онлайн-запись на удобное время</li>
+                <li>Быстрый доступ к приемам и услугам</li>
+                <li>Единый кабинет для истории посещений</li>
+            </ul>
+        </div>
+
+        <div class="auth-window">
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="register" type="button">Регистрация</button>
+                <button class="tab-btn" data-tab="login" type="button">Авторизация</button>
+            </div>
+
+            <div class="auth-panel active" id="register-panel">
+                <h2>Создать аккаунт</h2>
+                <p>Заполните данные, чтобы перейти к записи на прием.</p>
+                <form class="auth-form">
+                    <label>
+                        <span>ФИО</span>
+                        <input type="text" name="full_name" placeholder="Иванов Иван Иванович" autocomplete="name" required>
+                    </label>
+                    <label>
+                        <span>Телефон</span>
+                        <input type="tel" name="phone" placeholder="+7 (999) 123-45-67" autocomplete="tel" required>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="example@mail.ru" autocomplete="email" required>
+                    </label>
+                    <label>
+                        <span>Пароль</span>
+                        <input type="password" name="password" placeholder="Введите пароль" autocomplete="new-password" required>
+                    </label>
+                    <p class="auth-message" aria-live="polite"></p>
+                    <button type="submit" class="btn primary">Зарегистрироваться</button>
+                </form>
+            </div>
+
+            <div class="auth-panel" id="login-panel">
+                <h2>Войти в кабинет</h2>
+                <p>Введите данные, чтобы открыть ваш профиль пациента.</p>
+                <form class="auth-form">
+                    <label>
+                        <span>Email или телефон</span>
+                        <input type="text" name="login" placeholder="example@mail.ru" autocomplete="username" required>
+                    </label>
+                    <label>
+                        <span>Пароль</span>
+                        <input type="password" name="password" placeholder="Введите пароль" autocomplete="current-password" required>
+                    </label>
+                    <p class="auth-message" aria-live="polite"></p>
+                    <button type="submit" class="btn primary">Войти</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+const menuLinks = document.querySelectorAll(".menu a");
+menuLinks.forEach((link) => {
+    if (link.href === window.location.href.split("#")[0]) {
+        link.classList.add("active");
+    }
+});
+
+const tabs = document.querySelectorAll(".tab-btn");
+const panels = document.querySelectorAll(".auth-panel");
+
+function activateTab(tabName) {
+    tabs.forEach((tab) => {
+        tab.classList.toggle("active", tab.dataset.tab === tabName);
+    });
+
+    panels.forEach((panel) => {
+        panel.classList.toggle("active", panel.id === `${tabName}-panel`);
+    });
+}
+
+tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        const tabName = tab.dataset.tab;
+        activateTab(tabName);
+        history.replaceState(null, "", `#${tabName}`);
+    });
+});
+
+const initialTab = window.location.hash === "#login" ? "login" : "register";
+activateTab(initialTab);
+</script>
+<script src="account-ui.js?v=5"></script>
+</body>
+</html>
+
