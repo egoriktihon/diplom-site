@@ -1,7 +1,0 @@
-.venv/
-.vscode/
-__pycache__/
-*.pyc
-clinic.db
-clinic.db-journal
-bad_lines.txt
