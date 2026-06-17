@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клиника Доктор</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account-ui.css?v=5">
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav">
+        <a href="index.html" class="logo">Клиника Доктор</a>
+
+        <nav class="menu">
+            <a href="index.html" class="active">Главная</a>
+            <a href="services.html">Услуги</a>
+            <a href="doctors.html">Врачи</a>
+            <a href="prices.html">Цены</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+
+        <a href="auth.html#register" class="btn primary">Записаться</a>
+    </div>
+</header>
+
+<section class="hero home-hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>Клиника «Доктор» — забота о вашем здоровье</h1>
+            <p>Современная диагностика, опытные врачи и удобная онлайн-запись в одном месте</p>
+            <a href="auth.html#register" class="btn glass">Записаться онлайн</a>
+        </div>
+    </div>
+</section>
+
+<section class="advantages container">
+    <div class="card">
+        <img src="foto/advantages/adv1.png" alt="Опытные врачи">
+        <h3>Опытные врачи</h3>
+    </div>
+
+    <div class="card">
+        <img src="foto/advantages/adv2.png" alt="Современное оборудование">
+        <h3>Современное оборудование</h3>
+    </div>
+
+    <div class="card">
+        <img src="foto/advantages/adv3.png" alt="Удобное время">
+        <h3>Удобное время</h3>
+    </div>
+
+    <div class="card">
+        <img src="foto/advantages/adv4.png" alt="Индивидуальный подход">
+        <h3>Индивидуальный подход</h3>
+    </div>
+</section>
+
+<section class="doctors container">
+    <h2 class="section-title">Наши врачи</h2>
+    <div class="grid"></div>
+</section>
+
+<section class="prices container">
+    <h2 class="section-title">Цены</h2>
+    <div class="price-card double-column">
+        <div class="price-left">
+            <ul class="price-list">
+                <li>
+                    <img src="foto/prices/pri1.png" alt="Консультация" class="price-icon">
+                    <span class="service-name">Консультация</span>
+                    <span class="service-price">1500 ₽</span>
+                </li>
+                <li>
+                    <img src="foto/prices/pri2.png" alt="УЗИ" class="price-icon">
+                    <span class="service-name">УЗИ</span>
+                    <span class="service-price">2000 ₽</span>
+                </li>
+                <li>
+                    <img src="foto/prices/pri3.png" alt="Анализы" class="price-icon">
+                    <span class="service-name">Анализы</span>
+                    <span class="service-price">500 ₽</span>
+                </li>
+                <li>
+                    <img src="foto/prices/pri4.png" alt="ЭКГ" class="price-icon">
+                    <span class="service-name">ЭКГ</span>
+                    <span class="service-price">1200 ₽</span>
+                </li>
+            </ul>
+            <div class="price-more">
+                <a href="prices.html" class="btn primary">Все цены</a>
+            </div>
+        </div>
+        <div class="price-right">
+            <img src="foto/bolnica.jpg" alt="Фото услуг" class="price-photo">
+        </div>
+    </div>
+</section>
+
+<section class="about-clinic container">
+    <h2 class="section-title">О клинике</h2>
+    <div class="clinic-card double-column">
+        <div class="clinic-left">
+            <p class="clinic-intro">Клиника «Доктор» помогает пациенту пройти путь от первой консультации до диагностики и лечения в одном понятном пространстве, где все основные услуги и специалисты собраны вместе.</p>
+            <div class="clinic-facts">
+                <article class="clinic-fact">
+                    <span>Адрес</span>
+                    <strong>г. Москва, ул. Примерная, 12</strong>
+                    <p>Рядом с остановкой общественного транспорта и городской парковкой.</p>
+                </article>
+                <article class="clinic-fact">
+                    <span>Контакты</span>
+                    <strong>+7 (495) 123-45-67</strong>
+                    <p>info@clinicdoctor.ru</p>
+                </article>
+                <article class="clinic-fact">
+                    <span>График работы</span>
+                    <strong>Пн–Пт: 09:00–20:00</strong>
+                    <p>Сб–Вс: 10:00–18:00</p>
+                </article>
+                <article class="clinic-fact">
+                    <span>Преимущество</span>
+                    <strong>Онлайн-запись и единый профиль</strong>
+                    <p>Вы можете выбрать услугу, врача и удобное время без лишних звонков.</p>
+                </article>
+            </div>
+        </div>
+        <div class="clinic-right">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.000000!2d37.618423!3d55.751244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0000000000000000!2z0J3QvdC40LLQtdGCLCDQnNC40YbQuNC70YzQvdC40Y8!5e0!3m2!1sru!2sru!4v1600000000000!5m2!1sru!2sru"
+                width="100%"
+                height="100%"
+                style="border:0; border-radius:12px;"
+                allowfullscreen=""
+                loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2026 Клиника Доктор</p>
+    </div>
+</footer>
+
+<script>
+const links = document.querySelectorAll('.menu a');
+links.forEach(link => {
+    if (link.href === window.location.href) {
+        link.classList.add('active');
+    }
+});
+</script>
+<script src="account-ui.js?v=5"></script>
+
+</body>
+</html>
+

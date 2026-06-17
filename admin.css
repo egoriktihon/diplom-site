@@ -1,0 +1,254 @@
+.admin-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.admin-content {
+    display: grid;
+    gap: 24px;
+}
+
+.admin-sidebar {
+    position: sticky;
+    top: 18px;
+    display: grid;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #dbeafe;
+}
+
+.admin-sidebar a {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    color: #0f172a;
+    text-decoration: none;
+}
+
+.admin-sidebar a:hover {
+    background: #e0f2fe;
+    color: #0a84ff;
+}
+
+.admin-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.admin-summary-card {
+    padding: 18px;
+    border-radius: 18px;
+    background: #f8fbff;
+    border: 1px solid #dbeafe;
+}
+
+.admin-summary-card span {
+    display: block;
+    margin-bottom: 8px;
+    color: #64748b;
+}
+
+.admin-summary-card strong {
+    color: #0a84ff;
+    font-size: 2rem;
+}
+
+.admin-form {
+    display: grid;
+    gap: 14px;
+}
+
+.admin-form-group {
+    display: grid;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid #d7e3f3;
+    border-radius: 8px;
+    background: #f8fbff;
+}
+
+.admin-form-group h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+    width: 100%;
+    border: 1px solid #d7e3f3;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+.admin-hint {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.admin-picker {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: end;
+    padding: 16px;
+    border: 1px solid #d7e3f3;
+    border-radius: 16px;
+    background: #f8fbff;
+}
+
+.admin-picker-label {
+    grid-column: 1 / -1;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.admin-picker-btn {
+    min-width: 140px;
+}
+
+.admin-selected-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 24px;
+}
+
+.admin-selected-empty {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.admin-selected-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: #e0f2fe;
+    color: #0f172a;
+    border: 1px solid #bae6fd;
+    font-size: 0.95rem;
+}
+
+.admin-selected-item button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    color: #0a84ff;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Cross icon for delete actions */
+.delete-icon {
+    flex: 0 0 32px;
+    width: 32px;
+    min-width: 32px;
+    max-width: 32px;
+    height: 32px;
+    min-height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    color: #ef4444;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    line-height: 1;
+}
+
+.admin-list,
+.admin-appointments {
+    display: grid;
+    gap: 14px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.admin-list.collapsed {
+    display: none;
+}
+
+.admin-card,
+.admin-appointment-card {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 18px;
+    background: #f8fbff;
+    border: 1px solid #dbeafe;
+}
+
+.admin-card h3,
+.admin-appointment-card h3 {
+    margin: 0 0 8px;
+}
+
+.admin-card p,
+.admin-appointment-card p {
+    margin: 0;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.admin-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.appointment-status {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .admin-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        position: static;
+    }
+
+    .admin-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .admin-picker {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-card,
+    .admin-appointment-card {
+        flex-direction: column;
+    }
+}
